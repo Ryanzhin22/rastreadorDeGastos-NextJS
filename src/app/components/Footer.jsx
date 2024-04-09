@@ -11,7 +11,7 @@ const Footer = ({createOpen, setCreateOpen}) => {
     }
 
   return (
-    <footer className="flex items-center w-[600px] p-2 absolute bottom-0 justify-around border-t-2">
+    <footer className="flex items-center w-[600px] p-2 bottom-0 justify-around border-t-2 z-10">
         <div className="flex flex-col items-center justify-center">
             <span>📈</span>
             <p className="text-sm">Gráficos</p>
