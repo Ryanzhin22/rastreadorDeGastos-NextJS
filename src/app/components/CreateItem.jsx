@@ -16,7 +16,7 @@ const CreateItem = ({createOpen, setCreateOpen, setGastosArray}) => {
 
     const criarGasto = () => {
         if(value){
-            const novoGasto = {value: value, emoji: emoji, emojiName: emojiName}
+            const novoGasto = {id:Math.floor(Math.random()*1000000) , value: value, emoji: emoji, emojiName: emojiName}
             const gastosLocalStorage = JSON.parse(localStorage.getItem("gastosArray"))
             const gastoTotal = localStorage.getItem("gastoTotal")
     

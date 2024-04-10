@@ -6,10 +6,9 @@ const ListasGastos = ({}) => {
     const localStorageArray = JSON.parse(localStorage.getItem("gastosArray"))
     const gastoTotal = localStorage.getItem("gastoTotal")
 
-    const handleRemoveGasto = (key) => {
-        console.log(key)
+    const handleRemoveGasto = (id) => {
         const todosGastos = JSON.parse(localStorage.getItem("gastosArray"))
-        const newArray = todosGastos.filter((e,index) => index != key)
+        const newArray = todosGastos.filter((e) => e.id !== id)
         localStorage.setItem("gastosArray", JSON.stringify(newArray))
     }
 
@@ -31,7 +30,7 @@ const ListasGastos = ({}) => {
             </div>
             <div className="flex flex-col items-end">
                 <span className="text-red-500 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
-                <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400"><FaTrash/></span>
+                <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400" onClick={()=>handleRemoveGasto(elm.id)}><FaTrash/></span>
             </div>
         </div>
             

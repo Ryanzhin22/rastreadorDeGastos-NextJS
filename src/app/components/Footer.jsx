@@ -13,13 +13,13 @@ const Footer = ({createOpen, setCreateOpen}) => {
   return (
     <footer className="flex items-center w-[600px] p-2 bottom-0 justify-around border-t-2 z-10">
         <div className="flex flex-col items-center justify-center">
-            <span>📈</span>
-            <p className="text-sm">Gráficos</p>
+            <span>‍🔧</span>
+            <p className="text-sm">Em breve</p>
         </div>
         <span onClick={handleClick} className="text-3xl bg-yellow-300 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer"><IoMdAdd/></span>
         <div className="flex flex-col items-center justify-center">
-            <span>📢</span>
-            <p className="text-sm">Atualizações</p>
+            <span>‍🔧</span>
+            <p className="text-sm">Em breve</p>
         </div>
     </footer>
   )
