@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import EmojiCreate from "./EmojiCreate";
 
-const CreateItem = ({createOpen, setCreateOpen, setGastosArray}) => {
+const CreateItem = ({createOpen, setCreateOpen}) => {
 
     const [value, setValue] = useState("")
     const [emoji, setEmoji] = useState("👕")
@@ -18,16 +18,14 @@ const CreateItem = ({createOpen, setCreateOpen, setGastosArray}) => {
         if(value){
             const novoGasto = {id:Math.floor(Math.random()*1000000) , value: value, emoji: emoji, emojiName: emojiName}
             const gastosLocalStorage = JSON.parse(localStorage.getItem("gastosArray"))
-            const gastoTotal = localStorage.getItem("gastoTotal")
+            const gastoLocal = localStorage.getItem("gastoTotal")
     
-            localStorage.setItem("gastoTotal", (Number((gastoTotal ? gastoTotal : 0)) + Number(value)))
+            localStorage.setItem("gastoTotal", (Number((gastoLocal ? gastoLocal : 0)) + Number(value)))
     
             if(gastosLocalStorage){
                 localStorage.setItem("gastosArray", JSON.stringify(gastosLocalStorage.concat(novoGasto)))
-                setGastosArray(gastosLocalStorage.concat(novoGasto))
             }else{
                 localStorage.setItem("gastosArray", JSON.stringify([novoGasto]))
-                setGastosArray([novoGasto])
             }
     
             setValue("")
@@ -41,8 +39,6 @@ const CreateItem = ({createOpen, setCreateOpen, setGastosArray}) => {
         emojiOpen ? setEmojiOpen(false) : emojiOpen
         !emojiOpen ? setEmojiOpen(true) : emojiOpen
     }
-
-    console.log(emojiOpen)
 
 
   return (

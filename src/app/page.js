@@ -10,12 +10,11 @@ import { useState } from "react";
 
 export default function Home() {
 
-  const [gastosArray, setGastosArray] = useState(localStorage.getItem("gastosArray") ? localStorage.getItem("gastosArray") : [])
   const [createOpen, setCreateOpen] = useState(false)
 
   return (
     <main className="max-w-[600px] min-h-screen bg-white m-auto">
-      <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen} setGastosArray={setGastosArray}/>
+      <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen}/>
       <Header/>
       <Gastos/>
       <ListasGastos/>

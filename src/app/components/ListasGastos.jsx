@@ -9,6 +9,10 @@ const ListasGastos = ({}) => {
     const handleRemoveGasto = (id) => {
         const todosGastos = JSON.parse(localStorage.getItem("gastosArray"))
         const newArray = todosGastos.filter((e) => e.id !== id)
+        const elementoExcluido = todosGastos.filter((e) => e.id === id)
+        const gasto = Number(JSON.parse(localStorage.getItem("gastoTotal")))
+        const valorDescontado = gasto - Number(elementoExcluido[0].value)
+        localStorage.setItem("gastoTotal", valorDescontado)
         localStorage.setItem("gastosArray", JSON.stringify(newArray))
     }
 

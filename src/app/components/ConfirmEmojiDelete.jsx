@@ -1,9 +1,7 @@
 import React from "react";
 import { IoMdAdd } from "react-icons/io";
 
-const ConfirmEmojiDelete = ({key, emojiConfirm, setEmojiConfirm}) => {
-
-    console.log(key)
+const ConfirmEmojiDelete = ({emojiConfirm, setEmojiConfirm}) => {
 
     const handleClose = () => {
         setEmojiConfirm(false)
