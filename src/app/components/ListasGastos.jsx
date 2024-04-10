@@ -1,9 +1,17 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 
 const ListasGastos = ({}) => {
 
     const localStorageArray = JSON.parse(localStorage.getItem("gastosArray"))
     const gastoTotal = localStorage.getItem("gastoTotal")
+
+    const handleRemoveGasto = (key) => {
+        console.log(key)
+        const todosGastos = JSON.parse(localStorage.getItem("gastosArray"))
+        const newArray = todosGastos.filter((e,index) => index != key)
+        localStorage.setItem("gastosArray", JSON.stringify(newArray))
+    }
 
   return (
     <section className="flex flex-col min-h-[400px]">
@@ -13,7 +21,7 @@ const ListasGastos = ({}) => {
         </div>
         {localStorageArray && localStorageArray.map((elm,index) => (
 
-        <div key={index} className="flex flex-row justify-between p-4">
+        <div index={index} key={index} className="flex flex-row justify-between p-4 group">
             <div className="flex flex-row justify-center items-center gap-4">
                 <span className="text-4xl">{elm.emoji}</span>
                 <div>
@@ -21,7 +29,10 @@ const ListasGastos = ({}) => {
                     <p className="text-slate-500 font-light">14h30</p>
                 </div>
             </div>
-            <span className="text-red-500 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
+            <div className="flex flex-col items-end">
+                <span className="text-red-500 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
+                <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400"><FaTrash/></span>
+            </div>
         </div>
             
         ))}
