@@ -17,7 +17,7 @@ export default function Home() {
       <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen}/>
       <Header/>
       <Gastos/>
-      <ListasGastos/>
+      <ListasGastos setCreateOpen={setCreateOpen}/>
       <Footer createOpen={createOpen} setCreateOpen={setCreateOpen}/>
 
     </main>

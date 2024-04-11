@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 
-const ListasGastos = ({}) => {
+const ListasGastos = ({setCreateOpen}) => {
 
     const localStorageArray = JSON.parse(localStorage.getItem("gastosArray"))
     const gastoTotal = localStorage.getItem("gastoTotal")
@@ -14,6 +14,10 @@ const ListasGastos = ({}) => {
         const valorDescontado = gasto - Number(elementoExcluido[0].value)
         localStorage.setItem("gastoTotal", valorDescontado)
         localStorage.setItem("gastosArray", JSON.stringify(newArray))
+    }
+
+    const openAuto = () => {
+        setCreateOpen(true)
     }
 
   return (
@@ -29,12 +33,12 @@ const ListasGastos = ({}) => {
                 <span className="text-4xl">{elm.emoji}</span>
                 <div>
                     <p className="font-bold">{elm.emojiName}</p>
-                    <p className="text-slate-500 font-light">14h30</p>
+                    <p className="text-slate-500 font-light">{elm.hour}</p>
                 </div>
             </div>
             <div className="flex flex-col items-end">
                 <span className="text-red-500 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
-                <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400" onClick={()=>handleRemoveGasto(elm.id)}><FaTrash/></span>
+                <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400" onClick={()=>{handleRemoveGasto(elm.id) ; openAuto()}}><FaTrash/></span>
             </div>
         </div>
             
