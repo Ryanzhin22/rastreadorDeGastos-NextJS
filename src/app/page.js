@@ -11,15 +11,17 @@ import { useState } from "react";
 export default function Home() {
 
   const [createOpen, setCreateOpen] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <main className="max-w-[600px] min-h-screen bg-white m-auto">
-      <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen}/>
-      <Header/>
-      <Gastos/>
-      <ListasGastos setCreateOpen={setCreateOpen}/>
-      <Footer createOpen={createOpen} setCreateOpen={setCreateOpen}/>
-
-    </main>
+    <div className={darkMode && "dark"}>
+      <main className="max-w-[600px] min-h-screen bg-white m-auto dark:bg-neutral-900 dark:text-neutral-300">
+        <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen}/>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Gastos/>
+        <ListasGastos setCreateOpen={setCreateOpen}/>
+        <Footer createOpen={createOpen} setCreateOpen={setCreateOpen}/>
+      </main>
+    </div>
   );
 }

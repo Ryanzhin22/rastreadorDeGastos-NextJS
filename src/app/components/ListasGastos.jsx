@@ -33,11 +33,11 @@ const ListasGastos = ({setCreateOpen}) => {
                 <span className="text-4xl">{elm.emoji}</span>
                 <div>
                     <p className="font-bold">{elm.emojiName}</p>
-                    <p className="text-slate-500 font-light">{elm.hour}</p>
+                    <p className="text-slate-500 font-light dark:text-neutral-400">{elm.hour}</p>
                 </div>
             </div>
             <div className="flex flex-col items-end">
-                <span className="text-red-500 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
+                <span className="text-red-500 dark:text-red-600 font-bold tracking-wider text-md">{`-${elm.value}$`}</span>
                 <span className="hidden group-hover:flex text-sm cursor-pointer text-gray-400" onClick={()=>{handleRemoveGasto(elm.id) ; openAuto()}}><FaTrash/></span>
             </div>
         </div>

@@ -62,7 +62,7 @@ const EmojiCreate = ({setEmojiOpen, emojiOpen, setEmoji, setEmojiName}) => {
     }
 
   return (
-    <div className="absolute bottom-0 w-[600px] h-[600px] flex-col bg-white backdrop-blur-lg border-t-2" style={{display: emojiOpen ? "flex" : "none"}}>
+    <div className="absolute bottom-0 w-[600px] h-[600px] flex-col bg-white backdrop-blur-lg border-t-2 dark:bg-neutral-900 dark:text-neutral-300" style={{display: emojiOpen ? "flex" : "none"}}>
         <TagCreate openNewTag={openNewTag} setOpenNewTag={setOpenNewTag}/>
         <ConfirmEmojiDelete emojiConfirm={emojiConfirm} setEmojiConfirm={setEmojiConfirm} />
         <p className="text-xl font-light text-gray-400 py-6 text-center">TAGS</p>
