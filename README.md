@@ -10,5 +10,3 @@ O rastreador de gastos é um site onde você pode colocar todos os valores de se
 -> Next.JS <br>
 -> Tailwind <br>
 -> React Icons
-
-## Acesse o deploy!
