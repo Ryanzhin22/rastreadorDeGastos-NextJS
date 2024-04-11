@@ -1,4 +1,4 @@
-### Rastreador de Gastos
+# Rastreador de Gastos
 
 ## O que é o Rastreador de Gastos
 
