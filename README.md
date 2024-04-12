@@ -10,3 +10,6 @@ O rastreador de gastos é um site onde você pode colocar todos os valores de se
 -> Next.JS <br>
 -> Tailwind <br>
 -> React Icons
+
+## Problema
+Devido ao grande uso de localStorage que eu fiz, houve diversos problemas com o build e não foi possível fazê-lo porque o localstorage é renderizado como client-component e o next faz primeiro a renderização dos server-components: O erro ocorre porque o código que acessa o localStorage está sendo executado em um contexto onde ele não está disponível, como no lado do servidor durante a renderização de páginas estáticas.
