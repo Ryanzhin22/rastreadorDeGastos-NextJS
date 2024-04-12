@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rastreador de Gastos
 
-## Getting Started
+## O que é o Rastreador de Gastos
+O rastreador de gastos é um site onde você pode colocar todos os valores de seus gastos e indentificação de cada um (seu emoji), onde na tela principal, aparecerá o valor total de todos os gastos. Também é possível criar tags, remover tags, remover os gastos já adicionados e ativar o dark mode do site, onde irá mudar todas as telas. 
 
-First, run the development server:
+![Screenshot_180](https://github.com/Ryanzhin22/rastreadorDeGastos-NextJS/assets/103447125/9640f091-09a3-468a-ba19-cfb043366a86)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Ferramentas utilizadas
+-> React <br>
+-> Next.JS <br>
+-> Tailwind <br>
+-> React Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Problema
+Devido ao grande uso de localStorage que eu fiz, houve diversos problemas com o build e não foi possível fazê-lo porque o localstorage é renderizado como client-component e o next faz primeiro a renderização dos server-components: O erro ocorre porque o código que acessa o localStorage está sendo executado em um contexto onde ele não está disponível, como no lado do servidor durante a renderização de páginas estáticas.
