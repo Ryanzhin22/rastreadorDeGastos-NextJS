@@ -14,7 +14,7 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <div className={darkMode && "dark"}>
+    <div className={darkMode ? "dark" : "light"}>
       <main className="max-w-[600px] min-h-screen bg-white m-auto dark:bg-neutral-900 dark:text-neutral-300">
         <CreateItem createOpen={createOpen} setCreateOpen={setCreateOpen}/>
         <Header darkMode={darkMode} setDarkMode={setDarkMode}/>

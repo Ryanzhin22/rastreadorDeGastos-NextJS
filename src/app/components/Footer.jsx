@@ -16,7 +16,7 @@ const Footer = ({createOpen, setCreateOpen}) => {
             <span>‍🔧</span>
             <p className="text-sm">Em breve</p>
         </div>
-        <span onClick={handleClick} className="text-3xl bg-yellow-300 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer dark:text-black"><IoMdAdd/></span>
+        <span onClick={handleClick} className="text-3xl bg-yellow-300 rounded-full w-12 h-12 flex items-center justify-center cursor-pointer dark:text-black hover:text-4xl hover:bg-yellow-400 hover:px-2 hover:py-2 transition-all duration-300"><IoMdAdd/></span>
         <div className="flex flex-col items-center justify-center cursor-pointer">
             <span>‍🔧</span>
             <p className="text-sm">Em breve</p>
